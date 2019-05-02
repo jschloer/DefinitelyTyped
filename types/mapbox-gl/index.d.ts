@@ -111,11 +111,13 @@ declare namespace mapboxgl {
 
         getSource(id: string): AnySourceImpl;
 
-        addImage(name: string, image: HTMLImageElement | ArrayBufferView | { width: number, height: number, data: Uint8Array | Uint8ClampedArray } | ImageData, options?: { pixelRatio?: number, sdf?: boolean }): this;
+        addImage(id: string, image: HTMLImageElement | ArrayBufferView | { width: number, height: number, data: Uint8Array | Uint8ClampedArray } | ImageData, options?: { pixelRatio?: number, sdf?: boolean }): this;
 
-        hasImage(name: string): boolean;
+        updateImage(id: string, image: HTMLImageElement | ArrayBufferView | { width: number, height: number, data: Uint8Array | Uint8ClampedArray } | ImageData): this;
 
-        removeImage(name: string): this;
+        hasImage(id: string): boolean;
+
+        removeImage(id: string): this;
 
         loadImage(url: string, callback: Function): this;
 
